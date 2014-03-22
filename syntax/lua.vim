@@ -1,3 +1,6 @@
+syn match ccFunction /:\w*(/ms=s+1,me=e-1
+syn match ccClass /CC[A-Z]\w*[:|(]/me=e-1
+
 syn keyword ccClass AssetsManager
 syn keyword ccClass AssetsManagerDelegateProtocol
 syn keyword ccClass BatchAllocator
@@ -1349,6 +1352,20 @@ syn keyword ccStruct WhereTerm
 syn keyword ccStruct Zio
 syn keyword ccStruct ZipEntryInfo
 
+syn keyword ccMacro kCCHTTPRequestMethodGET             
+syn keyword ccMacro kCCHTTPRequestMethodPOST            
+syn keyword ccMacro kCCHTTPRequestAcceptEncodingIdentity
+syn keyword ccMacro kCCHTTPRequestAcceptEncodingGzip    
+syn keyword ccMacro kCCHTTPRequestAcceptEncodingDeflate 
+syn keyword ccMacro kCCHTTPRequestStateIdle             
+syn keyword ccMacro kCCHTTPRequestStateCleared          
+syn keyword ccMacro kCCHTTPRequestStateInProgress       
+syn keyword ccMacro kCCHTTPRequestStateCompleted        
+syn keyword ccMacro kCCHTTPRequestStateCancelled        
+syn keyword ccMacro kCCHTTPRequestStateFailed           
+syn keyword ccMacro kCCHTTPRequestCURLStateIdle         
+syn keyword ccMacro kCCHTTPRequestCURLStateBusy         
+syn keyword ccMacro kCCHTTPRequestCURLStateClosed       
 
 syn keyword ccEnum BUILDDEF
 syn keyword ccEnum Back_EaseIn
@@ -1725,11 +1742,9 @@ syn keyword ccEnum kWebSocketScriptHandlerMessage
 syn keyword ccEnum kWebSocketScriptHandlerOpen
 syn keyword ccEnum kZoomActionTag
 
-syn match ccFunction "\v:[a-z]\w*"
-syn match ccClass "\vCC[A-Z]\w*"
-
 highlight link ccClass CCClass
 highlight link ccType Type
 highlight link ccStruct Structure
 highlight link ccEnum Constant
 highlight link ccFunction Function
+highlight link ccMacro Constant
